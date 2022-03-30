@@ -1,18 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<form action = "/register" method = "post">
-		<label for = "Username">Username: </label>
-		<input type="text" name="Username" id = "Username">
-		<label for = "Password">Password: </label>
-		<input type="text" name="Password" id = "Password">
-	</form>
-	<button>Register</button>
-</body>
-</html>
+<%@ include file="index.jsp" %>  
+<hr/>  
+<h3>Login Form</h3>  
+
+<br>
+		<form method="get" action="addUser.jsp">
+			<table>
+				<tr>    
+					<td>Bar</td><td><input type="text" name="barvalia"></td>
+				</tr>
+				<tr>
+					<td>Beer</td><td><input type="text" name="beer"></td>
+				</tr>
+				<tr>
+					<td>Price</td><td><input type="text" name="price"></td>
+				</tr>
+			</table>
+			<input type="submit" value="Login">
+		</form>
+<br>

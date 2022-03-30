@@ -10,11 +10,10 @@ public class ApplicationDB {
 	public ApplicationDB(){
 		
 	}
-
 	public Connection getConnection(){
 		
 		//Create a connection string
-		String connectionUrl = "jdbc:mysql://localhost:3306/BarBeerDrinkerSample";
+		String connectionUrl = "jdbc:mysql://localhost:3306/cs336 project";
 		Connection connection = null;
 		
 		try {
@@ -33,6 +32,7 @@ public class ApplicationDB {
 		try {
 			//Create a connection to your DB
 			connection = DriverManager.getConnection(connectionUrl,"root", "root");
+			//NOTE: replace second root argument above to the password for your mysql user
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -51,10 +51,6 @@ public class ApplicationDB {
 		}
 	}
 	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		ApplicationDB dao = new ApplicationDB();
 		Connection connection = dao.getConnection();
@@ -63,6 +59,4 @@ public class ApplicationDB {
 		dao.closeConnection(connection);
 	}
 	
-	
-
 }
