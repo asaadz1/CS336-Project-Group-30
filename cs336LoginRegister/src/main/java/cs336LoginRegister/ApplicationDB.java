@@ -31,8 +31,8 @@ public class ApplicationDB {
 		}
 		try {
 			//Create a connection to your DB
-			connection = DriverManager.getConnection(connectionUrl,"root", "root");
-			//NOTE: replace second root argument above to the password for your mysql user
+			connection = DriverManager.getConnection(connectionUrl,"root", "pass");
+			//NOTE: replace second root argument above to the password for your specific MySQL user
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

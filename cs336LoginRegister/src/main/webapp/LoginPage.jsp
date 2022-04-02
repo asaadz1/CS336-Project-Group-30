@@ -3,17 +3,15 @@
 <h3>Login Form</h3>  
 
 <br>
-		<form method="get" action="addUser.jsp">
+		<form method="get" action="loginAuth.jsp">
 			<table>
 				<tr>    
-					<td>Bar</td><td><input type="text" name="barvalia"></td>
+					<td>username</td><td><input type="text" name="username"></td>
 				</tr>
 				<tr>
-					<td>Beer</td><td><input type="text" name="beer"></td>
+					<td>password</td><td><input type="password" name="pass"></td>
 				</tr>
-				<tr>
-					<td>Price</td><td><input type="text" name="price"></td>
-				</tr>
+
 			</table>
 			<input type="submit" value="Login">
 		</form>

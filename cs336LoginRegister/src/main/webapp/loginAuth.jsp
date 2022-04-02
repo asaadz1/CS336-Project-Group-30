@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import = "cs336LoginRegister.*"%>
+    pageEncoding="ISO-8859-1" import = "cs336LoginRegister.*"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>AddUser</title>
+<title>LoginAuth</title>
 </head>
 <body>
 <%
@@ -19,8 +19,7 @@
 		//Create a SQL statement
 		Statement stmt = con.createStatement();
 
-		//Get parameters from the HTML form at the HelloWorld.jsp
-		String email = request.getParameter("email");
+		//Get parameters from the HTML form at the LoginPage.jsp
 		String username = request.getParameter("username");
 		String pass = request.getParameter("pass");
 
@@ -28,33 +27,28 @@
 		PreparedStatement ps1 = con.prepareStatement(query);
 		ps1.setString(1,username);
 		ResultSet rs = ps1.executeQuery();
-		if(rs.next()){
-            out.println("<font color=red>");
-            out.println("username is already taken");
-            out.println("</font>");
-            out.println("<a 'href=RegisterPage.jsp'> <input type = 'submit' value = 'go back'/> </a>");
-		}
-	
-		else{
-			//Make an insert statement for the Sells table:
-			String insert = "INSERT INTO user(email, username, pass)"
-							+ "VALUES (?, ?, ?)";
-			//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-			PreparedStatement ps2 = con.prepareStatement(insert);
 
-			//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-			ps2.setString(1, email);
-			ps2.setString(2, username);
-			ps2.setString(3, pass);
-			//Run the query against the DB
-			ps2.executeUpdate();
+		if(rs.next() == false){
+			out.println("<font color=red>");
+            out.println("user does not exist");
+            out.println("</font>");
+		} 
+		else if(rs.getString("username").equals(username) && rs.getString("pass").equals(pass)){
+			out.println("<font color=green>");
+	        out.println("login successful");
+	        out.println("</font>");
 			
+		}
+		else{
+			out.println("<font color=red>");
+	        out.println("login unsucessful, please check username and password are correct");
+	        out.println("</font>");
 		}
 		
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
         stmt.close();
         con.close();
-		
+
 	} catch (Exception ex) {
 		out.print(ex);
 		out.print("Insert failed :()");
