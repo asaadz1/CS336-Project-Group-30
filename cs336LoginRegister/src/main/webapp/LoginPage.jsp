@@ -20,7 +20,9 @@
         </label>    
         <input type="Password" name="pass" id="Pass" placeholder="Password">    
         <br><br>    
-        <input type="submit" value="Login" id = "log">      
+        <input type="submit" value="Login" id = "log"> 
+        <br><br>
+        New User ?<a href="RegisterPage.jsp">Register</a>      
     </form>     
 </div>    
 </body>    
