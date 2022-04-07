@@ -48,6 +48,10 @@
 			ps2.setString(3, pass);
 			//Run the query against the DB
 			ps2.executeUpdate();
+            out.println("<font color=green>");
+            out.println("Success");
+            out.println("</font>");
+            out.println("<a 'href=RegisterPage.jsp'> <input type = 'submit' value = 'go back'/> </a>");
 			
 		}
 		

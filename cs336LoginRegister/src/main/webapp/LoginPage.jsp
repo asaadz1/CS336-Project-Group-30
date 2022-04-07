@@ -1,18 +1,24 @@
 <%@ include file="index.jsp" %>  
 <hr/>  
-<h3>Login Form</h3>  
-
+<link href="LoginPageStyle.css" rel="stylesheet" type="text/css">
+<body>
 <br>
-		<form method="get" action="loginAuth.jsp">
-			<table>
-				<tr>    
-					<td>username</td><td><input type="text" name="username"></td>
-				</tr>
-				<tr>
-					<td>password</td><td><input type="password" name="pass"></td>
-				</tr>
-
-			</table>
-			<input type="submit" value="Login">
+		<h2>Login Form</h2>
+		<div class = "login">
+			<form id = "login" method="get" action="loginAuth.jsp">
+				    
+				<label>
+					<b>username</b>
+				</label>
+				<input id = "username" type="text" name="username">
+				<label>
+					<b>password</b>
+				</label>
+				<input id = "pass" type="password" name="pass">
+				
+			<input type="submit" value="Login" id = "log">
 		</form>
+		</div>  
+
 <br>
+</body>
