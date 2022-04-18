@@ -30,13 +30,17 @@
 
 		if(rs.next() == false){
 			out.println("<font color=red>");
-            out.println("user does not exist");
+            out.println("User does not exist");
             out.println("</font>");
 		} 
 		else if(rs.getString("username").equals(username) && rs.getString("pass").equals(pass)){
 			out.println("<font color=green>");
-	        out.println("login successful");
+	        out.println("Login Successful");
+	        out.println("<br><br>");
+	        out.println("Welcome User: " + username);
 	        out.println("</font>");
+	        out.println("<br><br>");
+	        out.println("<a href=LoginPage.jsp>Logout</a>");
 			
 		}
 		else{
@@ -44,7 +48,6 @@
 	        out.println("login unsucessful, please check username and password are correct");
 	        out.println("</font>");
 		}
-		
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
         stmt.close();
         con.close();

@@ -22,7 +22,7 @@
         <br><br>    
         <input type="submit" value="Login" id = "log"> 
         <br><br>
-        New User ?<a href="RegisterPage.jsp">Register</a>      
+        New User? <a href="RegisterPage.jsp">Register</a>      
     </form>     
 </div>    
 </body>    
