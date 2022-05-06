@@ -2,4 +2,4 @@
 
 Computer Part Website
 
-Members: Kevin Su, 
+Members: Kevin Su, Asaad Zahid, Ashwin Anand, Nathan D Nestor
