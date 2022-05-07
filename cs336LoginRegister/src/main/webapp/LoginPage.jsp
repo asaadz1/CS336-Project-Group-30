@@ -9,7 +9,7 @@
 <body>    
     <h2>Login Page</h2><br>    
     <div class="login">    
-    <form id="login" method="get" action="loginAuth.jsp">    
+    <form id="loginUser" method="get" action="loginAuth.jsp">    
         <label><b>User Name     
         </b>    
         </label>    

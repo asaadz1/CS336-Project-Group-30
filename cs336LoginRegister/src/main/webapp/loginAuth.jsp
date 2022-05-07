@@ -32,21 +32,33 @@
 			out.println("<font color=red>");
             out.println("User does not exist");
             out.println("</font>");
+            response.sendRedirect("LoginPage.jsp");
 		} 
 		else if(rs.getString("username").equals(username) && rs.getString("pass").equals(pass)){
 			out.println("<font color=green>");
 	        out.println("Login Successful");
 	        out.println("<br><br>");
-	        out.println("Welcome User: " + username);
+	        out.println("Welcome User: " + (String)session.getAttribute("user"));
 	        out.println("</font>");
 	        out.println("<br><br>");
-	        out.println("<a href=LoginPage.jsp>Logout</a>");
-			
+	        out.println("<a href=LogoutPage.jsp>Logout</a>");
+	        query = "SELECT * FROM admin WHERE username = ?";
+	        ps1 = con.prepareStatement(query);
+	        ps1.setString(1, username);
+	        rs = ps1.executeQuery();
+	        boolean isAdmin = false;
+	        if(rs.next() != false){
+	        	isAdmin = true;
+	        }
+        	session.setAttribute("isAdmin", isAdmin);
+	        session.setAttribute("user", username);
+	        response.sendRedirect("index.jsp");
 		}
 		else{
 			out.println("<font color=red>");
 	        out.println("login unsucessful, please check username and password are correct");
 	        out.println("</font>");
+	        response.sendRedirect("LoginPage.jsp");
 		}
 		//Close the connection. Don't forget to do it, otherwise you're keeping the resources of the server allocated.
         stmt.close();
