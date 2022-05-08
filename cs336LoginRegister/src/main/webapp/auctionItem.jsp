@@ -26,19 +26,18 @@ try {
 	int itemId = Integer.parseInt(queryResult.getString("max_id")) + 1;
 	
 	
-	// Use a bunch of test data
-	String itemName, category, itemDesc, user;
-	itemName = category = itemDesc = user = "test data";
-	
-	
 	// Set data based on end-user input data
+	String itemName = request.getParameter("item_name");
+	String category = request.getParameter("category");
+	String itemDesc = request.getParameter("item_desc");
+	String user = (String)session.getAttribute("user");
 	Date auctionClose = Date.valueOf(request.getParameter("auction_close"));
 	double initialPrice = Double.parseDouble(request.getParameter("initial_price"));
 	
 	
 	// Create the insert statement
 	String insertItemUpdate = "INSERT INTO items(item_name, category, item_desc, user, item_id, auction_close, initial_price)"
-			+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
+			+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 	PreparedStatement preparedUpdate = con.prepareStatement(insertItemUpdate);
 	preparedUpdate.setString(1, itemName);
 	preparedUpdate.setString(2, category);
