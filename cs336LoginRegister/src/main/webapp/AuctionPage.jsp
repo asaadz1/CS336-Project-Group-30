@@ -13,11 +13,11 @@
 		<form method="get" action="auctionItem.jsp">  					
 
 			<label><b>Minimum bid price</b></label>
-			<input type="text" name="max_price">
+			<input type="text" name="initial_price">
 			<br>
 			<br>
 			<label><b>Auction last date</b></label>
-			<input type = "date" name = "date">
+			<input type = "date" name = "auction_close">
 			<br>
 			<br>
 			<Label><b>Item Type: </b></Label>
