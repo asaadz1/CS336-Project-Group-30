@@ -1,2 +1,3 @@
 /cs336LoginRegister/build/
 /.metadata
+/cs336LoginRegister/src/main/java/cs336LoginRegister/ApplicationDB.java
