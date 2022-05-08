@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ include file="index.jsp" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,15 @@
 <title>Auction Page</title>
 </head>
 <body>
-
+	<%
+	
+	if(session.getAttribute("user")!=null){
+		out.println("User: " + (String)session.getAttribute("user"));
+	}
+	else{
+		out.println("Not Logged In");
+	}
+	%>
 	<br>
 		<h2>Auction a computer part</h2>
 		<form method="get" action="auctionItem.jsp">  					
@@ -31,7 +40,7 @@
 			<input type = "radio" name = "item_type" value = "Mother Board">Mother Board
 			<br>
 		
-			<input type="submit" value="Search">
+			<input type="submit" value="Submit">
 			
 		</form>
 	<br>

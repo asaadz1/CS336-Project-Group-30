@@ -8,6 +8,14 @@
 <title>Buy Page</title>
 </head>
 <body>
+	<%
+	if(session.getAttribute("user")!=null){
+		out.println("User: " + (String)session.getAttribute("user"));
+	}
+	else{
+		out.println("Not Logged In");
+	}
+	%>
 	<br>
 		<h2>Search for a computer part</h2>
 		<form method="get" action="buyItem.jsp">  					
